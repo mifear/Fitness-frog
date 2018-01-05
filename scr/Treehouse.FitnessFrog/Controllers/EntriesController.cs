@@ -52,12 +52,15 @@ namespace Treehouse.FitnessFrog.Controllers
       //This line above will pull the date value from the form, but instead we are using
       //parameters in the method signiture to pull the values from the form.
 
-      ViewBag.Date = ModelState["Date"].Value.AttemptedValue;
-      ViewBag.ActivityId = ModelState["ActivityId"].Value.AttemptedValue;
-      ViewBag.Duration = ModelState["Duration"].Value.AttemptedValue;
-      ViewBag.Intensity = ModelState["Intensity"].Value.AttemptedValue;
-      ViewBag.Exclude = ModelState["Exclude"].Value.AttemptedValue;
-      ViewBag.Notes = ModelState["Notes"].Value.AttemptedValue;
+      //The following can be used to preserve data, but the Html helper methods
+      //used in Add.cshtml internally use ModelState so they are no longer needed here
+
+      //ViewBag.Date = ModelState["Date"].Value.AttemptedValue;
+      //ViewBag.ActivityId = ModelState["ActivityId"].Value.AttemptedValue;
+      //ViewBag.Duration = ModelState["Duration"].Value.AttemptedValue;
+      //ViewBag.Intensity = ModelState["Intensity"].Value.AttemptedValue;
+      //ViewBag.Exclude = ModelState["Exclude"].Value.AttemptedValue;
+      //ViewBag.Notes = ModelState["Notes"].Value.AttemptedValue;
 
       return View();
     }
