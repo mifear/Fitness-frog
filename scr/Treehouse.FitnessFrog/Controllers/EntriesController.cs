@@ -70,6 +70,13 @@ namespace Treehouse.FitnessFrog.Controllers
       //ViewBag.Exclude = ModelState["Exclude"].Value.AttemptedValue;
       //ViewBag.Notes = ModelState["Notes"].Value.AttemptedValue;
 
+      //If there aren't any Duration field validation errors,
+      //then make sure that the Duration is > 0
+      if (ModelState.IsValidField("Duration") && entry.Duration <= 0)
+      {
+        ModelState.AddModelError("Duration", "The Duration field value must be greater than '0'.");
+      }
+
       if (ModelState.IsValid)
       {
         _entriesRepository.AddEntry(entry);
