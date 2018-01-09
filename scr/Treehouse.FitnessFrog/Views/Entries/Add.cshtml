@@ -7,10 +7,10 @@
 
 <h2>@ViewBag.Title</h2>
 
-@Html.ValidationSummary("the following errors were found:", new { @class = "aleart alert-danger" })
 
 @using (Html.BeginForm())
 {
+@Html.ValidationSummary("the following errors were found:", new { @class = "aleart alert-danger" })
   <div class="row">
 
     <div class="col-md-6">
